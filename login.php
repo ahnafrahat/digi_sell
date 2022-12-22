@@ -24,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $_SESSION["user_id"] = $user["id"];
             
+            $_SESSION["username"] = $user["username"];
+
+            
             header("Location: index.php");
             exit;
         }
@@ -106,3 +109,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   </body>
 </html>
+

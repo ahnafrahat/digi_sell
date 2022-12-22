@@ -1,9 +1,14 @@
 <?php
 
+// $host = "localhost";
+// $dbname = "digisell_db";
+// $username = "root";
+// $password = "";
+
 $host = "localhost";
-$dbname = "digisell_db";
-$username = "root";
-$password = "";
+$dbname = "ahnaf_digisel";
+$username = "ahnaf_root";
+$password = "8CsBbDGRndNh";
 
 $mysqli = new mysqli(hostname: $host,
                      username: $username,
@@ -17,3 +22,5 @@ if ($mysqli->connect_error) {
 return $mysqli;
 
 ?>
+
+

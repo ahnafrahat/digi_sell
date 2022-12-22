@@ -36,13 +36,12 @@ function getProducts($mysqli) {
 $products = getProducts($mysqli);
 
 $cookie_name = "digisell";
-$cookie_value = "Visited Digisell" . date("Y-m-d H:i:s");
+$cookie_value = "Visited Digisell" . date("Y-m-d H:i:s") . "email: " . $user["email"] . "";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
 
 
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,51 +50,54 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
 
   <!-- Mumble UI -->
   <link rel="stylesheet" href="uikit/styles/uikit.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/app.css" />
-  <link rel="stylesheet" href="styles/custom.css" />
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+  <script type="text/javascript" src="search.js"></script>
+
+
 
   <title>DIGI SELL</title>
 </head>
 
 <body>
   <!-- Header Section -->
-<?php include "nav.php"; ?>
+  <?php include "nav.php"; ?>
+
 
   <!-- Main Section -->
-  <main class="home">
+  <main class="projects">
     <section class="hero-section text-center">
       <div class="container container--narrow">
         <div class="hero-section__box">
-          <h2>BUY AND SELL <span>DIGITAL PRODUCTS</span></h2>
-          <h2>FROM AROUND THE WORLD</h2>
+          <h2>Search for <span>Digital Products</span></h2>
         </div>
 
         <div class="hero-section__search">
-          <form class="form" action="#" method="get">
+          <form class="form" action="" method="post">
             <div class="form__field">
-              <label for="formInput#search">Search Digital Products </label>
-              <input class="input input--text" id="formInput#search" type="text" name="text"
-                placeholder="Search Digital Products" />
+              <label for="formInput#search">Search By Products </label>
+              <input class="input input--text" id="search" type="text" name="search"
+                placeholder="Search by Project Title" />
             </div>
 
-            <input class="btn btn--sub btn--lg custom__button" type="submit" value="Search" />
+            <input class="btn btn--sub btn--lg" type="submit" value="search" />
           </form>
         </div>
       </div>
     </section>
     <!-- Search Result: DevList -->
-    <section class="devlist">
+    <section class="projectsList">
       <div class="container">
         <div class="">
-          <div class="">
-            <h2 class="text-center">Featured Products</h2>
-  <?php
-    foreach ($products as $product) {
+          <div class="" id="display">
+          <?php
+        foreach ($products as $product) {
         echo "<div class='card project'>
               <a href='' class='project'>
                 <div class='card__body'>
@@ -113,13 +115,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     
     }
   ?>
-
-
-          </div>
         </div>
       </div>
-     
-     
     </section>
 
   </main>

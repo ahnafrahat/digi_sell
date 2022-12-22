@@ -46,27 +46,34 @@
                 <a class="backButton" href="#"><i class="im im-angle-left"></i></a>
                 <br>
 
-                <form class="form" method="POST">
+                <form action="process_add_product.php" class="form" method="POST">
                     <!-- Input:Text -->
                     <div class="form__field">
-                        <label for="formInput#text">Product Title: </label>
-                        <input class="input input--text" id="formInput#text" type="text" name="text"
+                        <label for="product_name">Product Title: </label>
+                        <input class="input input--text" id="product_name" type="text" name="product_name"
                             placeholder="Enter text" />
                     </div>
 
                     <!-- Input:Text -->
                     <div class="form__field">
-                        <label for="formInput#text">Product Price: </label>
-                        <input class="input input--text" id="formInput#text" type="text" name="text"
+                        <label for="product_price">Product Price: </label>
+                        <input class="input input--text" id="product_price" type="text" name="product_price"
                             placeholder="Enter text" />
                     </div>
 
                     <!-- Input:Text -->
                     <div class="form__field">
-                        <label for="formInput#text">Category: </label>
-                        <input class="input input--text" id="formInput#text" type="text" name="text"
+                        <label for="prod_description">Description: </label>
+                        <input class="input input--text" id="prod_description" type="text" name="prod_description"
                             placeholder="Enter text" />
                     </div>
+                    
+                    <div class="form__field">
+                        <label for="image_link">Image Link: </label>
+                        <input class="input input--text" id="image_link" type="text" name="image_link"
+                            placeholder="Enter text" />
+                    </div>
+
                     <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
                 </form>
             </div>
